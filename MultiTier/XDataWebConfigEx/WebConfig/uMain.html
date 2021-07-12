@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>TMS Web Project</title>
+
+  </head>
+
+  <body>
+<div class="container p-5">
+
+  <form class="form-horizontal">
+<fieldset>
+
+
+<!-- Form Name -->
+<legend>Server Settings</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="DatabaseServer">Database Server</label>
+  <div class="col-md-4">
+  <input id="DatabaseServer" name="DatabaseServer" type="text" placeholder="Server" class="form-control input-md">
+  <span class="help-block">Database server name or IP to connect to</span>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="DatabasePort">Database Port</label>
+  <div class="col-md-4">
+  <input id="DatabasePort" name="DatabasePort" type="text" placeholder="Port" class="form-control input-md">
+  <span class="help-block">Database server port to connect to</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="DatabaseName">Database Name</label>
+  <div class="col-md-4">
+  <input id="DatabaseName" name="DatabaseName" type="text" placeholder="Name" class="form-control input-md">
+  <span class="help-block">Name of database to connect to</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="DatabaseUserName">Database User</label>
+  <div class="col-md-4">
+  <input id="DatabaseUserName" name="DatabaseUserName" type="text" placeholder="Username" class="form-control input-md">
+  <span class="help-block">Username for database login.</span>
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="DatabasePassword">Database Password</label>
+  <div class="col-md-4">
+    <input id="DatabasePassword" name="DatabasePassword" type="password" placeholder="Password" class="form-control input-md">
+    <span class="help-block">Password for database login.</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="BaseUrl">XData Server Base Url</label>
+  <div class="col-md-4">
+  <input id="BaseUrl" name="BaseUrl" type="text" placeholder="Base Url" class="form-control input-md">
+  <span class="help-block">Base URL for database Web service</span>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id"></label>
+  <div class="col-md-8">
+    <button id="btnSave" name="Save" class="btn btn-success">Save</button>
+    <button id="btnReload" name="Reload" class="btn btn-danger">Reload</button>
+    <button id="btnMonitor" name="Monitor" class="btn btn-secondary">Monitor</button>
+  </div>
+</div>
+
+<legend>Start / Stop Server</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="txtState">Current State</label>
+  <div class="col-md-4">
+  <input id="txtState" name="txtState" type="text" placeholder="Running?" class="form-control input-md">
+
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id">Action</label>
+  <div class="col-md-8">
+    <button id="btnStart" name="button1id" class="btn btn-success">Start</button>
+    <button id="btnStop" name="btnStop" class="btn btn-danger">Stop</button>    
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+  </body>
+</html>

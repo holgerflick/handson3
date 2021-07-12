@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DD5A37C5-F8BE-4521-BF96-F87F10DC87E0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PropManagement\PropManagementEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PropManagement\PropManagementEntities.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PropManagementEx">
+        <MSBuild Projects="PropManagement\PropManagementEx.dproj"/>
+    </Target>
+    <Target Name="PropManagementEx:Clean">
+        <MSBuild Projects="PropManagement\PropManagementEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PropManagementEx:Make">
+        <MSBuild Projects="PropManagement\PropManagementEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PropManagementEntities">
+        <MSBuild Projects="PropManagement\PropManagementEntities.dproj"/>
+    </Target>
+    <Target Name="PropManagementEntities:Clean">
+        <MSBuild Projects="PropManagement\PropManagementEntities.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PropManagementEntities:Make">
+        <MSBuild Projects="PropManagement\PropManagementEntities.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PropManagementEx;PropManagementEntities"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PropManagementEx:Clean;PropManagementEntities:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PropManagementEx:Make;PropManagementEntities:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

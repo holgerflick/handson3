@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{309D8F94-F9C6-45AA-81AD-534A31BBDFC8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Server\PostalServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLClient\PostalVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WEBClient\PostalWeb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXMobile\PostalFMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="VCLGrid\VCLGridEx.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PostalServer">
+        <MSBuild Projects="Server\PostalServer.dproj"/>
+    </Target>
+    <Target Name="PostalServer:Clean">
+        <MSBuild Projects="Server\PostalServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PostalServer:Make">
+        <MSBuild Projects="Server\PostalServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PostalVCL">
+        <MSBuild Projects="VCLClient\PostalVCL.dproj"/>
+    </Target>
+    <Target Name="PostalVCL:Clean">
+        <MSBuild Projects="VCLClient\PostalVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PostalVCL:Make">
+        <MSBuild Projects="VCLClient\PostalVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PostalWeb">
+        <MSBuild Projects="WEBClient\PostalWeb.dproj"/>
+    </Target>
+    <Target Name="PostalWeb:Clean">
+        <MSBuild Projects="WEBClient\PostalWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PostalWeb:Make">
+        <MSBuild Projects="WEBClient\PostalWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PostalFMX">
+        <MSBuild Projects="FMXMobile\PostalFMX.dproj"/>
+    </Target>
+    <Target Name="PostalFMX:Clean">
+        <MSBuild Projects="FMXMobile\PostalFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PostalFMX:Make">
+        <MSBuild Projects="FMXMobile\PostalFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLGridEx">
+        <MSBuild Projects="VCLGrid\VCLGridEx.dproj"/>
+    </Target>
+    <Target Name="VCLGridEx:Clean">
+        <MSBuild Projects="VCLGrid\VCLGridEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLGridEx:Make">
+        <MSBuild Projects="VCLGrid\VCLGridEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PostalServer;PostalVCL;PostalWeb;PostalFMX;VCLGridEx"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PostalServer:Clean;PostalVCL:Clean;PostalWeb:Clean;PostalFMX:Clean;VCLGridEx:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PostalServer:Make;PostalVCL:Make;PostalWeb:Make;PostalFMX:Make;VCLGridEx:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

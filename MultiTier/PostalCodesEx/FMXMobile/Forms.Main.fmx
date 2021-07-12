@@ -1,0 +1,63 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Postal code lookup'
+  ClientHeight = 480
+  ClientWidth = 470
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object txtPostalCode: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 0
+    ControlType = Platform
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 457.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object btnSearch: TButton
+    Anchors = [akTop, akRight]
+    ControlType = Platform
+    Position.X = 352.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Search'
+    OnClick = btnSearchClick
+  end
+  object Grid: TStringGrid
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    CanFocus = True
+    ClipChildren = True
+    Position.X = 8.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 449.000000000000000000
+    Size.Height = 369.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 14.000000000000000000
+    StyledSettings = [Family, Style, FontColor]
+    TabOrder = 2
+    Options = [ColumnResize, ColLines, RowLines, Tabs, Header, AutoDisplacement]
+    Viewport.Width = 444.000000000000000000
+    Viewport.Height = 337.000000000000000000
+    object StringColumn1: TStringColumn
+      Header = 'Country'
+      Size.Width = 137.000000000000000000
+    end
+    object StringColumn2: TStringColumn
+      Header = 'City'
+      Size.Width = 140.000000000000000000
+    end
+    object StringColumn3: TStringColumn
+      Header = 'State'
+    end
+  end
+end

@@ -1,0 +1,2 @@
+csv RCDATA "..\..\resources\csv\people.csv"
+people RCDATA "..\..\resources\svg\people.zip"

@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E3576B24-D4C0-4B07-AC5C-578419204FAF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Server\XDataWebConfigEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebConfig\WebConfigClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DesktopConfig\DeskConfigClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="XDataWebConfigEx">
+        <MSBuild Projects="Server\XDataWebConfigEx.dproj"/>
+    </Target>
+    <Target Name="XDataWebConfigEx:Clean">
+        <MSBuild Projects="Server\XDataWebConfigEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="XDataWebConfigEx:Make">
+        <MSBuild Projects="Server\XDataWebConfigEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WebConfigClient">
+        <MSBuild Projects="WebConfig\WebConfigClient.dproj"/>
+    </Target>
+    <Target Name="WebConfigClient:Clean">
+        <MSBuild Projects="WebConfig\WebConfigClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WebConfigClient:Make">
+        <MSBuild Projects="WebConfig\WebConfigClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DeskConfigClient">
+        <MSBuild Projects="DesktopConfig\DeskConfigClient.dproj"/>
+    </Target>
+    <Target Name="DeskConfigClient:Clean">
+        <MSBuild Projects="DesktopConfig\DeskConfigClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DeskConfigClient:Make">
+        <MSBuild Projects="DesktopConfig\DeskConfigClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="XDataWebConfigEx;WebConfigClient;DeskConfigClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="XDataWebConfigEx:Clean;WebConfigClient:Clean;DeskConfigClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="XDataWebConfigEx:Make;WebConfigClient:Make;DeskConfigClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

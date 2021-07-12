@@ -1,0 +1,18 @@
+program WebConfigClient;
+
+uses
+  Vcl.Forms,
+  WEBLib.Forms,
+  uMain in 'uMain.pas' {FrmMain: TWebForm} {*.html},
+  uServiceController in 'uServiceController.pas' {ServiceController: TWebDataModule},
+
+  uMonitor in 'uMonitor.pas' {FrmMonitor: TWebForm} {*.html};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmMain, FrmMain);
+  Application.Run;
+end.
